@@ -1,0 +1,22 @@
+- tblEmployee
+    EId EName   EAddress    ESalary DOJ
+    101	Ankit	Mumbai	    20000	2021-08-01 00:00:00.000
+    102	Ankush	Delhi	    17000	2019-11-03 00:00:00.000
+    103	Rohit	Sakshi	    13000	2020-06-24 00:00:00.000
+    104	Altaf	Goa	        23000	2018-05-17 00:00:00.000
+    105	Anish	Mango	    18000	1999-01-25 00:00:00.000
+    106	Ankush	Daman	    17000	1993-10-27 00:00:00.000
+    107	Neha	Noida	    21000	2001-07-13 00:00:00.000
+    108	Kapil	Mumbai	    16000	1995-11-11 00:00:00.000
+    109	Suman	Daman	    11000	2000-01-11 00:00:00.000
+
+Q1. Find maximum salary of Employee in table tblEmployee.
+Q2. Find second maximum salary of Employee from tblEmployee.
+Q3. Retrieve all the Employee whose Name starts with 'A'.
+Q4. Select all the information of employee whose salary is 21000,11000 and 13000.
+Q5. Create a new table with the help of existing table data and structure.
+Q6. Find all employees whose salary is between 10000 and 15000.
+Q7. Delete more than one record from tblEmployeeClone lets say delete those employee having Id 102,104 and 105.
+===============================================================================================================
+
+

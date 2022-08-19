@@ -1,0 +1,78 @@
+Database - TestDb
+Table#1 
+    - tblEmployee
+        EId EName   EAddress    ESalary DOJ
+        101	Ankit	Mumbai	    20000	2021-08-01 00:00:00.000
+        102	Ankush	Delhi	    17000	2019-11-03 00:00:00.000
+        103	Rohit	Sakshi	    13000	2020-06-24 00:00:00.000
+        104	Altaf	Goa	        23000	2018-05-17 00:00:00.000
+        105	Anish	Mango	    18000	1999-01-25 00:00:00.000
+        106	Ankush	Daman	    17000	1993-10-27 00:00:00.000
+        107	Neha	Noida	    21000	2001-07-13 00:00:00.000
+        108	Kapil	Mumbai	    16000	1995-11-11 00:00:00.000
+        109	Suman	Daman	    11000	2000-01-11 00:00:00.000
+    - Create Query
+        create table tblEmployee(
+        EId int identity(101,1) primary key,
+        EName nvarchar(20),
+        EAddress nvarchar(50),
+        ESalary int,
+        DOJ datetime
+        )
+    - Insert Query
+        insert into tblEmployee values ('Ankit','Mumbai',20000,'08-01-2021')
+        insert into tblEmployee values ('Ankush','Delhi',17000,'11-03-2019')
+        insert into tblEmployee values ('Rohit','Sakshi',13000,'06-24-2020')
+        insert into tblEmployee values ('Altaf','Goa',23000,'05-17-2018')
+        insert into tblEmployee values ('Anish','Mango',18000,'01-25-1999')
+        insert into tblEmployee values ('Ankush','Daman',17000,'10-27-1993')
+        insert into tblEmployee values ('Neha','Noida',21000,'07-13-2001')
+        insert into tblEmployee values ('Kapil','Mumbai',16000,'11-11-1995')
+        insert into tblEmployee values ('Suman','Daman',11000,'01-11-2000')
+Q1. Find maximum salary of Employee in table tblEmployee.
+Ans. 
+    104	Altaf	Goa	23000	2018-05-17 00:00:00.000
+Query.
+    select * from tblEmployee where ESalary=(select max(ESalary) from tblEmployee)
+    
+Q2. Find second maximum salary of Employee from tblEmployee.
+Ans.
+    107	Neha	Noida	21000	2001-07-13 00:00:00.000
+Query.
+    select * from tblEmployee where ESalary=(select max(ESalary) from tblEmployee where ESalary<(select max(ESalary) from tblEmployee))
+
+Q3. Retrieve all the Employee whose Name starts with 'A'
+Ans.
+    101	Ankit	Mumbai	20000	2021-08-01 00:00:00.000
+    102	Ankush	Delhi	17000	2019-11-03 00:00:00.000
+    104	Altaf	Goa	23000	2018-05-17 00:00:00.000
+    105	Anish	Mango	18000	1999-01-25 00:00:00.000
+    106	Ankush	Daman	17000	1993-10-27 00:00:00.000
+Query.
+    select * from tblEmployee where EName like 'A%'
+
+Q4. Select all the information of employee whose salary is 21000,11000 and 13000
+Ans.
+    103	Rohit	Sakshi	13000	2020-06-24 00:00:00.000
+    107	Neha	Noida	21000	2001-07-13 00:00:00.000
+    109	Suman	Daman	11000	2000-01-11 00:00:00.000
+Query.
+    select * from tblEmployee where ESalary in(21000,11000,13000)
+
+Q5. Create a new table with the help of existing table data and structure.
+Query.
+    select * into tblEmployeeClone from tblEmployee
+
+Q6. Find all employees whose salary is between 10000 and 15000.
+Ans.
+    103	Rohit	Sakshi	13000	2020-06-24 00:00:00.000
+    109	Suman	Daman	11000	2000-01-11 00:00:00.000
+Query.
+    select * from tblEmployee where ESalary between 10000 and 15000
+
+Q7. Delete more than one record from tblEmployeeClone lets say delete those employee having Id 102,104 and 105.
+Query.
+    delete from tblEmployeeClone where EId in(102,104,105)
+
+
+

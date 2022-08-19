@@ -1,0 +1,170 @@
+#2 - Variables is Javascript
+Varaiables - is just a container
+Js is a dynamically typed language
+    - run time me type decide hoga.
+    - ek string k liye variable bnaya but hum baad me usme number ,object , array kuch bhi store kr skte hain.
+    - c or c++ is statically typed language.
+let a = 7;
+    - a is a identifier
+    - 7 is a literal
+    - = is assignment operator.
+Rules for choosing Varaiables
+    - Must begin with a $,_ or a letter.
+    - Followed by letters,digits,underscores & $ is allowed
+        eg: let 9saurav=5; - is not allowed 
+    - Javascript reserved words cannot be used as a variable name.
+        eg: let var=5; - is not allowed
+    - Harry & harry are different variable(case sensitive).
+===================================================
+#3 - var let and const
+    - var is globally scoped while let & const are block scoped.
+    - var can be updated and redeclared within its scope.
+    - let can be updated but not redeclared
+    - const can be neither be updated nor be redeclared.
+    - const must be inititialised while declaration.
+    - eg: let a=2;let a=8; Not possible and will give an error
+====================================================
+#4 - Primitives and Objects in Javascript
+7 Primitive Data Types (nn bb ss u)
+    - let a =null;
+    - let b= 876;
+    - let c = true;
+    - let d = BigInt("897");
+    - let e = "Harry";
+    - let f = Symbol("I am not a nice symbol");
+    - let g = undefined; or let g;
+Non Primitive Data Types (Objects) -> Having key value pair.
+    - let obj={"Harry":true,"Saurav":31,"Rohan":undefined}
+    - console.log(obj["Saurav"],obj.Saurav);
+=====================================================
+#5 - Practice Set 1
+    1. Create a variable of type string and try to add a number to it.
+    2. Use typeof operator to find the datatype of the string in the above question Q1.
+    3. Create a const object in Javascript. Can you change it to hold a number later?
+    4. Try to add a new key to the const object in Q3. Were you able to do it?
+    5. Write a program to create a word meaning dictionary of 5 words.
+======================================================
+#6 - Operator and Expression
+    - Arithmetic Operator
+        +,-,*,/,%, ** , ++ , --
+    - Assignment Operator
+        = -> x=y
+        += -> x=x+y 
+        -= -> x=x-y
+        *= -> x=x*y
+        /= -> x=x/y
+        %= -> x=x%y 
+        **= -> x=x**y (x to the power y)  
+    - Comparison Operator
+        == , != , === , !== , > , < , <= , >= , ? (ternary operator)
+    - Logical Operator
+        && ,  || , !  
+========================================================
+#7 - Conditional Expression 
+    - if else statement
+        - if statement
+        - if ... else statement
+        - if ... else if ...else statement
+    - switch statement
+    - ternary operator
+        - (marks>10)? "Pass":"Fail"
+========================================================
+#8 - Practice Set 2
+    1. Use Logical operator to find whenever the age of a person lies between 10 and 20
+    2. Demonstrate the use of swith statement in Javascript. Print the age of person if it is 10,20 and 30.
+    3. WAP to find a weather a number is divisible by 2 and 3
+    4. WAP to find a weather a number is divisible by either 2 or 3.
+    5. Print "You can drive" or "You can not drive" based on age being greater than 18 using ternary operator.
+========================================================
+#9 - Loops in Javascript
+    - for loop
+        let num=Number.parseInt(prompt("Please Enter a number"));
+        for(let i=1;i<=num;i++){
+            console.log(i);
+        } 
+    - for in (can be used for objects)
+        let marks={
+            "Saurav":54,
+            "Sam":62,
+            "Radhika":23,
+            "Banty":65,
+            "Babita":52
+        }
+        for(let student in marks){
+            console.log("Marks of "+student+" is : "+marks[student])
+        }
+    - for of (can be used for iterables like array or string)
+        for(let ch of str){console.log(ch)}
+=========================================================
+#10 - While Loops is Javascript
+    - while loop
+        let num=Number.parseInt(prompt("Please Enter a number"));
+        let i=1;
+        while(i<=num)
+        {
+            console.log(i);
+            i++
+        }
+    - do while loop
+        let num=Number.parseInt(prompt("Please Enter a number"));
+        let i=1;
+        do{
+            console.log(i);
+            i++
+        }while(i<=num)
+===========================================================
+#11 - Functions in Javascript
+Functions
+    - If we want a same piece of code to execute again and again , intead of repeating it multiple times we just create a function for that.
+    - logic ko seperate rakhne k liye function use krenge.
+    - const hello=() =>{console.log("Hello Friend");return "Greeted"};
+        let hasGreeted=hello();
+        console.log(hasGreeted);
+===========================================================
+#12 - Practice Set 3
+    1. WAP to print the marks of students in an object using for loop. obj={harry:98,rohan:70,aakash:75}
+    2. WAP for Q1 using for in loop
+    3. WAP to print "Try Again" until the user enters the correct number.
+    4. Write a function to find mean of 5 numbers.
+===========================================================
+#13 - Introduction to Strings
+    Strings
+    - strings can be declared using both single quotes and double quotes.
+    - we can print the characters of a strings using its index value. 
+        eg: let str="Harry"; console.log(str[0]);// output: H
+    Template literal
+    - eg:
+        let boy1='Pramod';
+        let boy2="Nikhil";
+        const sentence=`${boy2} is the friend of ${boy1}`
+        console.log(sentence);
+    - We can insert variable directly in template literal . This is called string interpolation.
+    Escape sequence
+    - eg:
+        let a='banan\'a';
+        for (let ch in a){console.log(a[ch])}
+=============================================================
+#14 - String methods in Javascript
+    - Examples
+        let str='Saurav';
+        console.log(str.length);
+        console.log(str.toUpperCase());
+        console.log(str.toLocaleLowerCase());
+        console.log(str.slice(2,4));
+        console.log(str.slice(2));
+        console.log(str.replace("S","G"));
+        console.log(str.concat(" is a good Boy"," Exactly!"))
+    - String is immutable 
+        means str[2]="k"; is not possible
+
+===========================================================
+#15 - Practice Set 4
+    1. What will the following line print ? console.log("har\"".length)
+    2. Explore the includes, startsWith & endsWith function of a string.
+    3. WAP to convert a given string to uppercase.
+    4. Extract the amount out of the string. "Please give Rs 1000"
+    5. Try to change the 4th character of a given string . Were you able to do that?
+    
+
+
+                                    

@@ -1,0 +1,151 @@
+Practice Set 1
+1. Create a variable of type string and try to add a number to it.
+Sol.
+    let str="myStr";
+    str+=5;
+    console.log(str); // "myStr5"
+2. Use typeof operator to find the datatype of the string in the above question Q1.
+Sol. 
+    let str="myStr";
+    str+=5;
+    console.log(typeof(str)); // string
+3. Create a const object in Javascript. Can you change it to hold a number later?
+Sol. 
+    const obj={
+        name:"Kumar",
+        age:21,
+        gender:"male"
+    }
+    obj=4; // it will throw as error because we can not reassign any variable with const declaration
+4. Try to add a new key to the const object in Q3. Were you able to do it?
+Sol.
+    const obj={
+        name:"Kumar",
+        age:21,
+        gender:"male"
+    }
+    obj["designation"]="developer";// no error as obj are reference type and by adding a new key we are not changing the reference to it.
+    console.log(obj);
+5. Write a program to create a word meaning dictionary of 5 words.
+Sol.
+    const dictionary={
+        "praise":"prasansha krna",
+        "stubborn":"jiddi",
+        "devoted":"samarpit",
+        "aviary":"jaha panchiyo ko rakha jata hai",
+        "ammicable":"prasanshniye"
+    }
+    console.log(dictionary);
+
+Practice Set 2
+1. Use Logical operator to find whenever the age of a person lies between 10 and 20
+Sol.
+    let age=Number.parseInt(prompt("What is your age"));
+    if(age>10 && age<20){
+        console.log("Your age lies between 10 to 20")
+    }
+    else{
+        console.log("Your age does not lies between 10 to 20")
+    }
+2. Demonstrate the use of swith statement in Javascript. Print the age of person if it is 10,20 and 30.
+Sol.
+    let age=Number.parseInt(prompt("What is your age"));
+    switch(age){
+        case 10:
+            console.log("Your age is 10")
+            break;
+        case 20:
+            console.log("Your age is 20")
+            break;
+        case 30:
+            console.log("Your age is 30")
+            break;
+        default:
+            console.log("your age is not special.");
+    }
+3. WAP to find a weather a number is divisible by 2 and 3
+Sol.
+    let num=Number.parseInt(prompt("Please Enter a number"));
+    if(num%2==0 && num%3 ==0){
+        console.log("Number is divisible by 2 and 3")
+    }
+    else{
+        console.log("Number is not divisible by 2 and 3")
+    }
+4. WAP to find a weather a number is divisible by either 2 or 3.
+Sol.
+    let num=Number.parseInt(prompt("Please Enter a number"));
+    if(num%2==0 || num%3 ==0){
+        console.log("Number is divisible by 2 or 3")
+    }
+    else{
+        console.log("Number is not divisible by 2 or 3")
+    }
+5. Print "You can drive" or "You can not drive" based on age being greater than 18 using ternary operator.
+Sol.
+    let age=Number.parseInt(prompt("Please Enter your Age?"));
+    console.log(age>18?"You can Drive":"You can not Drive")
+
+Practice Set 3
+1. WAP to print the marks of students in an object using for loop. obj={harry:98,rohan:70,aakash:75}
+Sol.
+    let marks={
+        Harry:98,
+        Rohan:70,
+        Aakash:75
+    }
+    for(let i=0;i<Object.keys(marks).length;i++){
+        console.log("Marks of "+Object.keys(marks)[i]+ " is "+ marks[Object.keys(marks)[i]])
+    }
+2. WAP for Q1 using for in loop
+Sol.
+    let marks={
+        Harry:98,
+        Rohan:70,
+        Aakash:75
+    }
+    for(let key in marks){
+        console.log("Marks of "+key+ " is "+ marks[key])
+    }
+3. WAP to print "Try Again" until the user enters the correct number.
+Sol.
+    let correctNum=4;
+    let num;
+    while(num!==correctNum){
+        console.log("Try Again");
+        num=Number.parseInt(prompt("Please Enter a number"));
+    }
+    console.log("You have entered correct number.")
+4. Write a function to find mean of 5 numbers.
+Sol.
+    const calculateMean=(a,b,c,d)=>{
+        return (a+b+c+d)/4
+    }
+    let mean=calculateMean(2,3,4,6)
+    console.log(mean);
+
+Practice Set 4
+1. What will the following line print ? console.log("har\"".length)
+Sol.
+    console.log("har\"".length) //4 as the /" is treated as one escape sequence character.
+2. Explore the includes, startsWith & endsWith function of a string.
+Sol. 
+    let str="Black fox hiding around the bush";
+    console.log(str.includes("fox")); // returns true
+    console.log(str.startsWith("K")); // returns false
+    console.log(str.endsWith("h")); // returns true
+3. WAP to convert a given string to uppercase.
+Sol.
+    let str="Black fox hiding around the bush";
+    console.log(str.toUpperCase());
+4. Extract the amount out of the string. "Please give Rs 1000"
+Sol.
+    let str="Please give Rs 1000";
+    console.log(str.slice("Please give Rs ".length));
+    console.log(Number.parseInt(str.slice("Please give Rs ".length)))
+5. Try to change the 4th character of a given string . Were you able to do that?
+Sol.
+    let str="Love";
+    str[2]="s";
+    console.log(str)// str does not change as string are immutable . it will not through an error instead.
+
